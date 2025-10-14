@@ -26,10 +26,9 @@ function Projects() {
             <ProjectCard
               imgPath={p1cover}
               isBlog={false}
-              title="Project One"
-              description="Short one-liner about this project’s goal and the key outcome."
-              ghLink=""
-              demoLink=""
+              title="Pathpal"
+              description="Wayfinding experience shaped by human-centered insights."
+              demoLink="/viewer?p=/work/p1-long.jpg&title=Pathpal"
             />
           </Col>
 
@@ -38,10 +37,9 @@ function Projects() {
             <ProjectCard
               imgPath={p2cover}
               isBlog={false}
-              title="Project Two"
-              description="One sentence describing the experience, audience, or impact."
-              ghLink=""
-              demoLink=""
+              title="Let's dance"
+              description="Interactive choreography and playful motion storytelling."
+              demoLink="/viewer?p=/work/p2-long.jpg&title=Let%27s%20dance"
             />
           </Col>
 
@@ -50,10 +48,9 @@ function Projects() {
             <ProjectCard
               imgPath={p3cover}
               isBlog={false}
-              title="Project Three"
-              description="What problem it addresses and what makes it unique."
-              ghLink=""
-              demoLink=""
+              title="POOD"
+              description="Designing clarity for complex decisions with calm visuals."
+              demoLink="/viewer?p=/work/p3-long.jpg&title=POOD"
             />
           </Col>
 
@@ -62,10 +59,9 @@ function Projects() {
             <ProjectCard
               imgPath={p4cover}
               isBlog={false}
-              title="Project Four"
-              description="A concise highlight of the result or learning."
-              ghLink=""
-              demoLink=""
+              title="Eligible"
+              description="From research to flows—making eligibility intuitive."
+              demoLink="/viewer?p=/work/p4-long.jpg&title=Eligible"
             />
           </Col>
         </Row>

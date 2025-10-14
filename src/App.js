@@ -17,6 +17,8 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import ImageViewer from "./pages/ImageViewer";
+
 function App() {
   const [load, upadateLoad] = useState(true);
 
@@ -39,7 +41,10 @@ function App() {
           <Route path="/project" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/resume" element={<Resume />} />
-          <Route path="*" element={<Navigate to="/"/>} />
+
+          <Route path="/viewer" element={<ImageViewer />} />
+
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
       </div>
@@ -48,3 +53,4 @@ function App() {
 }
 
 export default App;
+
