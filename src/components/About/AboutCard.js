@@ -3,38 +3,51 @@ import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
 
 function AboutCard() {
+  const lineStyle = { textAlign: "justify", marginBottom: "12px" };
+
   return (
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Soumyajit Behera </span>
-            from <span className="purple"> Bhubaneswar, India.</span>
-            <br />
-            I am currently employed as a software developer at Juspay.
-            <br />
-            I have completed Integrated MSc (IMSc) in Maths and Computing at BIT
-            Mesra.
-            <br />
-            <br />
-            Apart from coding, some other activities that I love to do!
+          {/* 一句一行，中间留空行（品牌感版） */}
+          <p style={lineStyle}>
+            Hello, I’m <span className="purple">Esme Qian</span> from{" "}
+            <span className="purple">China</span> — a UX designer shaping calm,
+            human-centered experiences.
           </p>
+
+          <p style={lineStyle}>
+            I’m pursuing an <span className="purple">M.S. in Digital Media</span> at the{" "}
+            <span className="purple">University of Washington</span>.
+          </p>
+
+          <p style={lineStyle}>
+            I design with <span className="purple">sensitivity and curiosity</span>,
+            translating subtle cues into clear, intuitive flows.
+          </p>
+
+          <p style={lineStyle}>
+            I start from small, lived details and refine them into systems that feel{" "}
+            <span className="purple">natural, generous, and grounded</span>.
+          </p>
+
+          {/* 爱好标题一行 */}
+          <p style={{ ...lineStyle, marginTop: "16px" }}>
+            Beyond design, I enjoy:
+          </p>
+
+          {/* 爱好清单：图标 + 一行一个 */}
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games
+              <ImPointRight /> Hiking
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs
+              <ImPointRight /> Hand-brewed coffee
             </li>
             <li className="about-activity">
-              <ImPointRight /> Travelling
+              <ImPointRight /> Plogging
             </li>
           </ul>
-
-          <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
-          </p>
-          <footer className="blockquote-footer">Soumyajit</footer>
         </blockquote>
       </Card.Body>
     </Card>
@@ -42,3 +55,4 @@ function AboutCard() {
 }
 
 export default AboutCard;
+
