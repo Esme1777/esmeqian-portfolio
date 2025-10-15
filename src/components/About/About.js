@@ -1,49 +1,46 @@
+// src/components/About/About.js
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
-import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
+import aboutPhoto from "../../Assets/about-portrait.jpg";
 
 function About() {
   return (
     <Container fluid className="about-section">
       <Particle />
       <Container>
-        <Row style={{ justifyContent: "center", padding: "10px" }}>
-          <Col
-            md={7}
-            style={{
-              justifyContent: "center",
-              paddingTop: "30px",
-              paddingBottom: "50px",
-            }}
-          >
+        <Row className="align-items-start g-4" style={{ padding: "10px" }}>
+          {/* 左列：文字 */}
+          <Col xs={12} md={7} lg={7} style={{ paddingTop: "30px", paddingBottom: "50px" }}>
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
               Know Who <strong className="purple">I'M</strong>
             </h1>
             <Aboutcard />
           </Col>
-          <Col
-            md={5}
-            style={{ paddingTop: "120px", paddingBottom: "50px" }}
-            className="about-img"
-          >
-            <img src={laptopImg} alt="about" className="img-fluid" />
+
+          {/* 右列：照片 */}
+          <Col xs={12} md={5} lg={5} className="about-img" style={{ paddingTop: "40px", paddingBottom: "40px" }}>
+            <img
+              src={aboutPhoto}
+              alt="Esme Qian portrait"
+              className="img-fluid about-photo"
+              style={{ maxWidth: "340px", width: "100%", height: "auto" }}
+            />
           </Col>
         </Row>
+
         <h1 className="project-heading">
           Professional <strong className="purple">Skillset </strong>
         </h1>
-
         <Techstack />
 
         <h1 className="project-heading">
           <strong className="purple">Tools</strong> I use
         </h1>
         <Toolstack />
-
       </Container>
     </Container>
   );
