@@ -22,45 +22,45 @@ function Projects() {
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           {/* Project 1 */}
-          <Col md={4} className="project-card">
+          <Col xs={12} md={6} className="project-card">
             <ProjectCard
               imgPath={p1cover}
               isBlog={false}
-              title="Pathpal"
-              description="Wayfinding experience shaped by human-centered insights."
+              title="Project1: Pathpal"
+              description="How to enhance communication among hikers during the hiking process?"
               demoLink="/viewer?p=/work/p1-long.jpg&title=Pathpal"
             />
           </Col>
 
           {/* Project 2 */}
-          <Col md={4} className="project-card">
+          <Col xs={12} md={6} className="project-card">
             <ProjectCard
               imgPath={p2cover}
               isBlog={false}
-              title="Let's dance"
-              description="Interactive choreography and playful motion storytelling."
+              title="Project2: Let's dance"
+              description="How to improve the enthusiasm of elderly people who want to join the square dance?"
               demoLink="/viewer?p=/work/p2-long.jpg&title=Let%27s%20dance"
             />
           </Col>
 
           {/* Project 3 */}
-          <Col md={4} className="project-card">
+          <Col xs={12} md={6} className="project-card">
             <ProjectCard
               imgPath={p3cover}
               isBlog={false}
-              title="POOD"
-              description="Designing clarity for complex decisions with calm visuals."
+              title="Project3: POOD"
+              description="In the future of food shortage and plastic surplus, what changes will occur in diets?"
               demoLink="/viewer?p=/work/p3-long.jpg&title=POOD"
             />
           </Col>
 
           {/* Project 4 */}
-          <Col md={4} className="project-card">
+          <Col xs={12} md={6} className="project-card">
             <ProjectCard
               imgPath={p4cover}
               isBlog={false}
-              title="Eligible"
-              description="From research to flows—making eligibility intuitive."
+              title="other work: Eligible"
+              description="When we are stared at, does the other person see me, or what they imagine me to be?"
               demoLink="/viewer?p=/work/p4-long.jpg&title=Eligible"
             />
           </Col>
