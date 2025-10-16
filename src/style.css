@@ -427,4 +427,127 @@ button:focus { box-shadow: none !important; }
     max-width: 100%;
   }
 }
+/* --- Tighter spacing for Skillset only (not Tools) --- */
+.about-section .tech-icons.skill-item {
+  /* 当前你有 4px 上下间距，这里压到一半；如果你那边是 8/12px，同样会被强制减半感 */
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+}
+
+/* 让徽章本身也更紧凑一点，避免看起来“块与块之间”仍显松散 */
+.about-section .skill-badge {
+  padding: 3px 8px !important;   /* 从 4~5px 收到 3px */
+  line-height: 1.08 !important;  /* 比原来更紧一点 */
+  font-size: 0.94rem !important; /* 轻微减小，增强紧凑感（可按需改回） */
+}
+
+/* --- Skillset：更紧的“上下间距”，但单个框更高 --- */
+.about-section .tech-icons.skill-item {
+  /* 减小相邻框之间的垂直距离 */
+  margin-top: 1px !important;    /* 原来若是 6~12，可按需再调成 2px/1px */
+  margin-bottom: 3px !important;
+}
+
+/* 提高每个技能框的“高度”感，但不改横向间距/宽度 */
+.about-section .skill-badge {
+  padding: 8px 10px !important;  /* ↑ 垂直 padding 稍加大，让框更“厚实” */
+  line-height: 1.1 !important;   /* 保持紧凑但不拥挤 */
+}
+
+/* Skillset：把相邻框之间的垂直距离压到极限 */
+.about-section .tech-icons.skill-item {
+  margin-top: 0 !important;
+  margin-bottom: -25px !important;   /* 如果还嫌远，试试 -2px 或 -3px */
+}
+
+/* Home: add space under "A LITTLE ABOUT ME" heading */
+.home-about-description h1 {
+  margin-bottom: 0 !important;        /* 先归零，避免叠加不可控 */
+}
+
+.home-about-body {
+  margin-top: 50px !important;        /* ← 往下挪一点，24~40 都可试 */
+}
+
+/* 手机上稍微紧凑一些 */
+@media (max-width: 767px) {
+  .home-about-body {
+    margin-top: 20px !important;
+  }
+}
+
+/* --- Home: 让右侧“生活照”靠上，并控制大小 --- */
+.home-about-section .myAvtar {
+  display: flex !important;
+  align-items: flex-start !important;   /* 顶部对齐 */
+  justify-content: center !important;
+  padding-top: 2.2em !important;        /* 原来是 9em，这里大幅收紧 */
+  padding-bottom: 2em !important;
+  margin-top: -8px;                      /* 轻微上移，-12~-4 可按需微调 */
+}
+
+/* 右侧生活照尺寸与阴影 */
+.home-portrait {
+  width: 100%;
+  height: auto;
+  max-width: 340px;                      /* 300~360 按视觉微调 */
+  max-height: 68vh;                      /* 防止明显“垂”过左侧文本 */
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.35);
+  object-fit: cover;
+}
+
+/* 大屏略微收敛尺寸，避免过重 */
+@media (min-width: 1400px) {
+  .home-portrait {
+    max-width: 320px;
+    max-height: 64vh;
+  }
+}
+
+/* 小屏自然流式，不强行上移 */
+@media (max-width: 767px) {
+  .home-about-section .myAvtar {
+    padding-top: 1.2em !important;
+    margin-top: 0;
+  }
+  .home-portrait {
+    max-width: 100%;
+    max-height: none;
+  }
+}
+
+/* ===== Scroll-down arrow on hero ===== */
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 3;                 /* 在粒子层之上 */
+  opacity: 0.7;               /* 半透明 */
+  transition: opacity .2s ease, transform .2s ease;
+  text-decoration: none;
+}
+
+.scroll-down:hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.scroll-down-icon {
+  width: 44px;
+  height: 44px;
+  color: #E9F1EF;             /* 浅色，适配你的自然背景 */
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+  animation: arrow-bounce 1.6s infinite;
+}
+
+@keyframes arrow-bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
+  60% { transform: translateY(-3px); }
+}
+
+
+
 

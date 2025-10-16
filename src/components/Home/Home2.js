@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/portrait.png";
+import myImg from "../../Assets/about-life.jpg"; // 用你的新生活照
 import Tilt from "react-parallax-tilt";
 import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -42,11 +42,16 @@ function Home2() {
           <Col md={4} className="myAvtar">
             <Tilt>
               <img
-  src={myImg}
-  className="img-fluid"
-  alt="Esme Qian portrait"
-  style={{ width: 320, height: 320, borderRadius: "50%", objectFit: "cover" }}
-/>
+                src={myImg}
+                className="img-fluid"
+                alt="Esme Qian portrait"
+                style={{
+                  width: 320,
+                  height: 320,
+                  borderRadius: "50%",
+                  objectFit: "cover"
+                }}
+              />
             </Tilt>
           </Col>
         </Row>
