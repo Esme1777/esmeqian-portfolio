@@ -10,14 +10,16 @@ function AboutCard() {
         <blockquote className="blockquote mb-0">
           <p
             style={{
-              textAlign: "justify",
+              textAlign: "left",
               lineHeight: "1.42",
               letterSpacing: "0.1px",
               marginBottom: 0,
             }}
           >
-            Hello, I’m <span className="purple">Esme Qian</span> — a{" "}
-            <span className="purple">UX designer</span> shaping calm, human-centered experiences.
+            <span style={{ whiteSpace: "nowrap" }}>
+              Hi, I’m <span className="purple">Esme Qian</span> — a{" "}
+              <span className="purple">designer</span> shaping calm, human-centered experiences.
+            </span>
             <br />
             <br />
             I’m pursuing an M.S. in Digital Media at the{" "}
@@ -31,7 +33,8 @@ function AboutCard() {
             I start from <span className="purple">small, lived details</span> and refine them into systems that feel natural, generous, and grounded.
           </p>
 
-          <ul style={{ marginTop: "12px", marginBottom: 0 }}>
+          {/* 增大这里的 marginTop 让清单整体下移 */}
+          <ul style={{ marginTop: "34px", marginBottom: 0 }}>
             <li className="about-activity" style={{ marginBottom: 6 }}>
               <ImPointRight /> Hiking
             </li>
@@ -49,3 +52,4 @@ function AboutCard() {
 }
 
 export default AboutCard;
+

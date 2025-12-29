@@ -547,6 +547,14 @@ button:focus { box-shadow: none !important; }
   40% { transform: translateY(-6px); }
   60% { transform: translateY(-3px); }
 }
+/* Center the small description line under titles on project cards */
+.project-desc {
+  text-align: center !important;
+  margin-top: 6px;
+  line-height: 1.25;
+  opacity: 0.9;         /* 可选：更精致的次要文本效果 */
+  font-size: 0.95rem;   /* 可选：略小一号 */
+}
 
 
 

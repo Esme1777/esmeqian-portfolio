@@ -1,41 +1,37 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
-function ProjectCards({ imgPath, title, description, demoLink }) {
-  const CardInner = (
-    <Card
-      className="project-card-view"
-      style={{ cursor: demoLink ? "pointer" : "default" }}
-    >
-      <Card.Img
-        variant="top"
-        src={imgPath}
-        alt={title}
-        loading="lazy"
-        className="img-fluid"
-      />
+function ProjectCards({ imgPath, title, description, demoLink, isBlog = false }) {
+  return (
+    <Card className="project-card-view">
+      {imgPath && (
+        <Card.Img
+          variant="top"
+          src={imgPath}
+          alt={title}
+          className="card-img-top"
+        />
+      )}
+
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title style={{ textAlign: "center" }}>{title}</Card.Title>
+
         {description && (
-          <Card.Text style={{ textAlign: "justify" }}>{description}</Card.Text>
+          <Card.Text className="project-desc">{description}</Card.Text>
         )}
-        {/* No GitHub/Demo buttons */}
+
+        {demoLink && (
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 10 }}>
+            <Button variant="primary" href={demoLink} target="_blank" rel="noreferrer">
+              {isBlog ? "Read Blog" : "View Case"}
+            </Button>
+          </div>
+        )}
       </Card.Body>
     </Card>
-  );
-
-  return demoLink ? (
-    <Link
-      to={demoLink}
-      style={{ textDecoration: "none", color: "inherit" }}
-      aria-label={`Open ${title}`}
-    >
-      {CardInner}
-    </Link>
-  ) : (
-    CardInner
   );
 }
 
 export default ProjectCards;
+
