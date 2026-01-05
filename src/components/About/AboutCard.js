@@ -1,7 +1,6 @@
 // src/components/About/AboutCard.js
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { ImPointRight } from "react-icons/im";
 
 function AboutCard() {
   return (
@@ -32,19 +31,6 @@ function AboutCard() {
             <br />
             I start from <span className="purple">small, lived details</span> and refine them into systems that feel natural, generous, and grounded.
           </p>
-
-          {/* 增大这里的 marginTop 让清单整体下移 */}
-          <ul style={{ marginTop: "34px", marginBottom: 0 }}>
-            <li className="about-activity" style={{ marginBottom: 6 }}>
-              <ImPointRight /> Hiking
-            </li>
-            <li className="about-activity" style={{ marginBottom: 6 }}>
-              <ImPointRight /> Hand-brewed coffee
-            </li>
-            <li className="about-activity" style={{ marginBottom: 0 }}>
-              <ImPointRight /> Plogging
-            </li>
-          </ul>
         </blockquote>
       </Card.Body>
     </Card>
@@ -52,4 +38,3 @@ function AboutCard() {
 }
 
 export default AboutCard;
-
