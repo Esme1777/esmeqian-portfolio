@@ -16,7 +16,7 @@ function About() {
           {/* 左列：文字 */}
           <Col xs={12} md={7} lg={7} style={{ paddingTop: "30px", paddingBottom: "50px" }}>
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Know Who <strong className="purple">I'M</strong>
+              Know Who <strong className="purple">I Am</strong>
             </h1>
             <Aboutcard />
           </Col>
