@@ -8,6 +8,7 @@ import p2cover from "../../Assets/Projects/p2cover.jpg";
 import p3cover from "../../Assets/Projects/p3cover.jpg";
 import p4cover from "../../Assets/Projects/p4cover.jpg";
 import p0cover from "../../Assets/Projects/p0cover.jpg";
+import bbctCover from "../../Assets/Projects/bbct-cover.jpg";
 
 function Projects() {
   return (
@@ -18,17 +19,32 @@ function Projects() {
           Selected <strong className="purple">Projects</strong>
         </h1>
 
-        {/* 更贴求职的一句话 */}
         <p style={{ color: "white", textAlign: "center" }}>
           Product UX and UX research projects—plus a few creative explorations.
         </p>
 
-        {/* ===== Featured: Product UX / Research ===== */}
-        <h2 style={{ color: "white", marginTop: 36, marginBottom: 16, textAlign: "center" }}>
+        <h2
+          style={{
+            color: "white",
+            marginTop: 36,
+            marginBottom: 16,
+            textAlign: "center",
+          }}
+        >
           Featured <span className="purple">Product UX / Research</span>
         </h2>
 
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={bbctCover}
+              title="BBCT Website Redesign"
+              description="UX Research · Website Design · WordPress"
+              demoLink="/viewer?p=/work/bbct-long.jpg&title=BBCT%20Website%20Redesign"
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={p0cover}
@@ -57,8 +73,14 @@ function Projects() {
           </Col>
         </Row>
 
-        {/* ===== Additional: Visual / Creative Tech ===== */}
-        <h2 style={{ color: "white", marginTop: 22, marginBottom: 16, textAlign: "center" }}>
+        <h2
+          style={{
+            color: "white",
+            marginTop: 22,
+            marginBottom: 16,
+            textAlign: "center",
+          }}
+        >
           Additional <span className="purple">Visual / Creative Tech</span>
         </h2>
 
