@@ -1,13 +1,20 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/about-life.jpg"; // 用你的新生活照
+import myImg from "../../Assets/about-life.jpg";
 import Tilt from "react-parallax-tilt";
-import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Home2() {
-  const handleEmailClick = () => {
-    window.alert("Email: qianyuxin2025@163.com");
+  const handleEmailClick = async () => {
+    const email = "yuxinqian17@gmail.com";
+
+    try {
+      await navigator.clipboard.writeText(email);
+      window.alert(`Email copied: ${email}`);
+    } catch (error) {
+      window.alert(`Email: ${email}`);
+    }
   };
 
   return (
@@ -16,26 +23,26 @@ function Home2() {
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              A LITTLE <span className="purple"> ABOUT </span> ME
+              <span className="purple">ABOUT</span> ME
             </h1>
 
             <p className="home-about-body">
-              I’m <span className="purple">Esme Qian</span>, an
-              <b> empathetic UX designer</b> exploring how{" "}
-              <b className="purple">human emotions</b> shape meaningful
-              interactions.
+              I enjoy turning ideas into thoughtful{" "}
+              <b className="purple">digital experiences</b>
+              <br />
+              by understanding people, organizing information,
+              <br />
+              and creating clear visual solutions.
               <br />
               <br />
-              I focus on <b className="purple">human-centered research</b>,
-              translating insights into calm, intuitive flows that feel natural.
+              Whether designing a website, product, or campaign,
               <br />
+              I focus on{" "}
+              <b className="purple">
+                making information easier to understand
+              </b>
               <br />
-              I love <b className="purple">storytelling</b>—turning complex
-              systems into narratives people can understand and feel.
-              <br />
-              <br />
-              And I care about <b className="purple">aesthetic, creative design</b>,
-              where nature meets technology to create resonant experiences.
+              and experiences more intuitive.
             </p>
           </Col>
 
@@ -49,7 +56,7 @@ function Home2() {
                   width: 320,
                   height: 320,
                   borderRadius: "50%",
-                  objectFit: "cover"
+                  objectFit: "cover",
                 }}
               />
             </Tilt>
@@ -58,19 +65,29 @@ function Home2() {
 
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
+            <h1>LET'S CONNECT</h1>
+
             <p>
-              Feel free to <span className="purple">connect</span> with me
+              Feel free to{" "}
+              <span className="purple">
+                reach out for opportunities or collaborations
+              </span>
+              .
             </p>
 
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <button
+                  type="button"
                   onClick={handleEmailClick}
                   className="icon-colour home-social-icons"
-                  aria-label="Show Email"
-                  title="Show Email"
-                  style={{ background: "transparent", border: "none", cursor: "pointer" }}
+                  aria-label="Copy email address"
+                  title="Copy email address"
+                  style={{
+                    background: "transparent",
+                    border: "none",
+                    cursor: "pointer",
+                  }}
                 >
                   <AiOutlineMail />
                 </button>
@@ -78,20 +95,7 @@ function Home2() {
 
               <li className="social-icons">
                 <a
-                  href="https://github.com/Esme1777"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                  aria-label="GitHub"
-                  title="GitHub"
-                >
-                  <AiFillGithub />
-                </a>
-              </li>
-
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/esme-qian-947136386"
+                  href="https://www.linkedin.com/in/yuxinqian/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
