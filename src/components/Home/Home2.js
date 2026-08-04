@@ -2,24 +2,64 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/about-life.jpg";
 import Tilt from "react-parallax-tilt";
-import { AiOutlineMail } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
 
 function Home2() {
-  const handleEmailClick = async () => {
-    const email = "yuxinqian17@gmail.com";
+  const contactColor = "#58b9b0";
+  const textColor = "#202529";
 
+  const copyToClipboard = async (value, successMessage) => {
     try {
-      await navigator.clipboard.writeText(email);
-      window.alert(`Email copied: ${email}`);
+      await navigator.clipboard.writeText(value);
+      window.alert(successMessage);
     } catch (error) {
-      window.alert(`Email: ${email}`);
+      window.alert(value);
     }
+  };
+
+  const buttonStyle = {
+    padding: "8px 18px",
+    borderRadius: "999px",
+    border: `1px solid ${contactColor}`,
+    background: "transparent",
+    color: contactColor,
+    fontSize: "0.9rem",
+    fontWeight: 600,
+    cursor: "pointer",
+    textDecoration: "none",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+  };
+
+  const contactItemStyle = {
+    minHeight: "150px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    textAlign: "center",
+    padding: "8px 16px",
+  };
+
+  const contactTitleStyle = {
+    color: contactColor,
+    fontSize: "1.1rem",
+    fontWeight: 600,
+    marginBottom: "14px",
+  };
+
+  const contactTextStyle = {
+    color: textColor,
+    marginBottom: "20px",
+    fontSize: "1.02rem",
+    minHeight: "26px",
+    lineHeight: 1.5,
   };
 
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
+        {/* About Me */}
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
@@ -63,51 +103,126 @@ function Home2() {
           </Col>
         </Row>
 
-        <Row>
-          <Col md={12} className="home-about-social">
-            <h1>LET'S CONNECT</h1>
-
-            <p>
-              Feel free to{" "}
-              <span className="purple">
-                reach out for opportunities or collaborations
-              </span>
-              .
-            </p>
-
-            <ul className="home-about-social-links">
-              <li className="social-icons">
-                <button
-                  type="button"
-                  onClick={handleEmailClick}
-                  className="icon-colour home-social-icons"
-                  aria-label="Copy email address"
-                  title="Copy email address"
+        {/* Contact */}
+        <section
+          id="contact"
+          style={{
+            scrollMarginTop: "90px",
+            marginTop: "80px",
+            padding: "38px 0 10px",
+          }}
+        >
+          <Row className="justify-content-center">
+            <Col xs={12} lg={11}>
+              <div style={{ textAlign: "center" }}>
+                <h1
                   style={{
-                    background: "transparent",
-                    border: "none",
-                    cursor: "pointer",
+                    color: textColor,
+                    fontSize: "2.5rem",
+                    marginBottom: "14px",
                   }}
                 >
-                  <AiOutlineMail />
-                </button>
-              </li>
+                  LET&apos;S{" "}
+                  <span style={{ color: contactColor }}>CONNECT</span>
+                </h1>
 
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/yuxinqian/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                  aria-label="LinkedIn"
-                  title="LinkedIn"
+                <p
+                  style={{
+                    maxWidth: "620px",
+                    margin: "0 auto 38px",
+                    color: textColor,
+                    lineHeight: 1.7,
+                    fontSize: "1rem",
+                    opacity: 0.82,
+                  }}
                 >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-            </ul>
-          </Col>
-        </Row>
+                  Always happy to chat about design, new opportunities, or
+                  collaborations.
+                </p>
+              </div>
+
+              <Row className="g-3 justify-content-center">
+                {/* Phone */}
+                <Col xs={12} md={4}>
+                  <div style={contactItemStyle}>
+                    <h5 style={contactTitleStyle}>Phone</h5>
+
+                    <p style={contactTextStyle}>
+                      +1 (206) 579-4487
+                    </p>
+
+                    <button
+                      type="button"
+                      style={buttonStyle}
+                      onClick={() =>
+                        copyToClipboard(
+                          "+12065794487",
+                          "Phone number copied!"
+                        )
+                      }
+                    >
+                      Copy Number
+                    </button>
+                  </div>
+                </Col>
+
+                {/* Email */}
+                <Col xs={12} md={4}>
+                  <div style={contactItemStyle}>
+                    <h5 style={contactTitleStyle}>Email</h5>
+
+                    <p
+                      style={{
+                        ...contactTextStyle,
+                        wordBreak: "break-word",
+                      }}
+                    >
+                      yuxinqian17@gmail.com
+                    </p>
+
+                    <button
+                      type="button"
+                      style={buttonStyle}
+                      onClick={() =>
+                        copyToClipboard(
+                          "yuxinqian17@gmail.com",
+                          "Email copied!"
+                        )
+                      }
+                    >
+                      Copy Email
+                    </button>
+                  </div>
+                </Col>
+
+                {/* LinkedIn */}
+                <Col xs={12} md={4}>
+                  <div style={contactItemStyle}>
+                    <h5 style={contactTitleStyle}>LinkedIn</h5>
+
+                    <p
+                      style={{
+                        ...contactTextStyle,
+                        wordBreak: "break-word",
+                      }}
+                    >
+                      linkedin.com/in/yuxinqian
+                    </p>
+
+                    <a
+                      href="https://www.linkedin.com/in/yuxinqian/"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={buttonStyle}
+                    >
+                      Visit Profile
+                    </a>
+                  </div>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </section>
       </Container>
     </Container>
   );

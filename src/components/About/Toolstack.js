@@ -1,43 +1,74 @@
-import React from "react";
-import { Col, Row } from "react-bootstrap";
-import {
-  SiPython,
-  SiFigma,
-  SiNotion,
-  SiAdobephotoshop,
-  SiSketch,
-  SiAdobexd,
-  SiAdobeillustrator,
-} from "react-icons/si";
+// src/components/About/Toolstack.js
 
-import tdLogo from "../../Assets/logos/touchdesigner.jpg";
+import React from "react";
 
 function Toolstack() {
-  const iconStyle = { width: "32px", height: "32px" }; 
-
-  const IconItem = ({ Icon }) => (
-    <Col xs={3} md={2} className="tech-icons" style={{ textAlign: "center", marginBottom: 16 }}>
-      <Icon style={iconStyle} />
-    </Col>
-  );
-
-  const ImgItem = ({ src, alt }) => (
-    <Col xs={3} md={2} className="tech-icons" style={{ textAlign: "center", marginBottom: 16 }}>
-      <img src={src} alt={alt} style={{ width: 32, height: 32, objectFit: "contain" }} />
-    </Col>
-  );
+  const toolRows = [
+    [
+      "Figma",
+      "WordPress",
+      "Photoshop",
+      "Illustrator",
+      "InDesign",
+      "After Effects",
+      "Premiere Pro",
+    ],
+    [
+      "Canva",
+      "Notion",
+      "Procreate",
+      "Sketch",
+      "Adobe XD",
+      "TouchDesigner",
+      "ZBrush",
+    ],
+  ];
 
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "40px" }}>
-      <IconItem Icon={SiPython} />
-      <IconItem Icon={SiFigma} />
-      <IconItem Icon={SiNotion} />
-      <IconItem Icon={SiAdobephotoshop} />
-      <IconItem Icon={SiSketch} />
-      <IconItem Icon={SiAdobexd} />
-      <IconItem Icon={SiAdobeillustrator} />
-      <ImgItem src={tdLogo} alt="TouchDesigner" />
-    </Row>
+    <div
+      style={{
+        maxWidth: "1120px",
+        margin: "0 auto",
+        padding: "0 20px 30px",
+      }}
+    >
+      {toolRows.map((row, rowIndex) => (
+        <div
+          key={rowIndex}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "14px",
+            marginBottom: rowIndex === 0 ? "16px" : 0,
+          }}
+        >
+          {row.map((tool) => (
+            <span
+              key={tool}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "9px 16px",
+                minWidth: "108px",
+                borderRadius: "999px",
+                background: "rgba(255, 255, 255, 0.08)",
+                color: "white",
+                fontSize: "0.94rem",
+                lineHeight: 1,
+                cursor: "default",
+                userSelect: "none",
+                whiteSpace: "nowrap",
+              }}
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
+      ))}
+    </div>
   );
 }
 
