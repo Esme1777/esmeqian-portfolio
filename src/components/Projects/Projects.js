@@ -9,6 +9,7 @@ import p2cover from "../../Assets/Projects/p2cover.jpg";
 import p3cover from "../../Assets/Projects/p3cover.jpg";
 import p4cover from "../../Assets/Projects/p4cover.jpg";
 import bbctCover from "../../Assets/Projects/bbct-cover.jpg";
+import ospiCover from "../../Assets/Projects/ospi-cover.jpg";
 
 function Projects() {
   return (
@@ -37,6 +38,15 @@ function Projects() {
             paddingBottom: "20px",
           }}
         >
+          <Col md={6} lg={6} className="project-card">
+            <ProjectCard
+              imgPath={ospiCover}
+              title="OSPI Visual Communications"
+              description="Graphic Design · Visual Communication · Social Media"
+              demoLink="/viewer?p=/work/ospi-long.jpg&title=OSPI%20Visual%20Communications"
+            />
+          </Col>
+
           <Col md={6} lg={6} className="project-card">
             <ProjectCard
               imgPath={bbctCover}
